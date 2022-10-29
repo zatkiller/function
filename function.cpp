@@ -27,8 +27,7 @@ private:
         callable_impl(Callback callback_) : callback(std::move(callback_)) {}
         
         R call(Args ...args) {
-            return std::invoke(callback, args...); // can call std::invoke to handle pointer to member function
-        }
+            return std::invoke(callback, args...);        }
     };
 
     std::unique_ptr<callable_interface> callable;
