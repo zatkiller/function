@@ -22,6 +22,7 @@ private:
         virtual ~callable_interface() = default;
     };
 
+    template<typename Callback>
     struct callable_impl : callable_interface {
         Callback callback;
         callable_impl(Callback callback_) : callback(std::move(callback_)) {}
